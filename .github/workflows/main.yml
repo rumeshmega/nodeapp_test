@@ -7,7 +7,7 @@ on:
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     steps: 
       - name: Check out the repo 
         uses: actions/checkout@v3
@@ -40,7 +40,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
       
       - name: Tag Docker image for GitHub Container Registry
-        run: docker tag rumeshmega/nodejsapp:latest ghcr.io/rumeshmega/nodejsapp:${{ github.sha }}
+        run: docker tag rumeshmega/nodejsapp:master ghcr.io/rumeshmega/nodejsapp:${{ github.sha }}
       
       - name: Push Docker image to GitHub Container Registry
         run: docker push ghcr.io/rumeshmega/nodejsapp:${{ github.sha }}
