@@ -43,4 +43,4 @@ jobs:
         run: docker tag rumeshmega/nodejsapp ghcr.io/rumeshmega/nodejsapp:${{ github.sha }}
       
       - name: Push Docker image to GitHub Container Registry
-        run: docker push ghcr.io/rumeshmega/nodejsapp:${{ github.sha } 
+        run: docker push ghcr.io/rumeshmega/nodejsapp:${{ github.sha }}
