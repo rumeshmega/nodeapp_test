@@ -40,7 +40,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
       
       - name: Tag Docker image for GitHub Container Registry
-        run: docker tag rumeshmega/nodejsapp ghcr.io/rumeshmega/nodejsapp:${{ github.sha }}
+        run: docker tag rumeshmega/nodejsapp:latest ghcr.io/rumeshmega/nodejsapp:${{ github.sha }}
       
       - name: Push Docker image to GitHub Container Registry
         run: docker push ghcr.io/rumeshmega/nodejsapp:${{ github.sha }}
